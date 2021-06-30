@@ -1,16 +1,23 @@
 import React from 'react';
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated } from '../Animated';
 import Box from '../Box';
 import Text from '../Text';
 
-const AnimatedText = animated(Text);
+const AnimatedText = animated(Text)
 
 function App() {
 
-  const styles = useSpring({ to: { fontSize: 50, margin: 100 }, from: { fontSize: 10, margin: 0 } })
+  const styles = useSpring({
+    to: { 
+      fontSize: 50,
+     },
+    from: {
+      fontSize: 10,
+    }
+  })
   return (
-    <Box style={{ marginTop: 50 }}>
-      <AnimatedText style={{...styles}}>React Spring Animation</AnimatedText>
+    <Box style={{ marginTop: 50}}>
+      <AnimatedText style={{ ...styles }}>React Spring Animation</AnimatedText>
     </Box>
   );
 }
